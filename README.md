@@ -20,3 +20,11 @@
     <li>Create a routine every 30 minutes to store data</li>
     <li>Create the API with Flask</li>
     <li>Create a dashboard with streamlit to show and interaction information, with charts, tables, maps, heatmap, etc</li>
+
+<h3>Guide Project</h3>
+<p>Do you have following files: </p>
+    <li>notebook_tracker.ipynb</li> this file it's to understand all code solution on mind
+    <li>create_table.py</li>
+    It's to run only one time
+    <li>request_api.py</li>
+    This is to request from API and data preparation and selection
