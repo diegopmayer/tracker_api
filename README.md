@@ -27,4 +27,4 @@
     <li>create_table.py</li>
     It's to run only one time
     <li>request_api.py</li>
-    This is to request from API and data preparation and selection
+    This is to request from API and data selection, preparation and insertion to database
