@@ -33,12 +33,10 @@ def request_vehicles():
 
 # request positions
 def request_positions():
-    #token = get_token()
-    #response_position = post(url_position, headers=token)
-    #obj_position = response_position.json()
-    # Transformingdf_positions = json_to_dataframe(obj_position)
-    with open('df_positions.pkl', 'rb') as file:
-        df_positions = pickle.load(file)
+    token = get_token()
+    response_position = post(url_position, headers=token)
+    obj_position = response_position.json()
+    df_positions = json_to_dataframe(obj_position)
     return df_positions
 
 
