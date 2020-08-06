@@ -2,6 +2,7 @@ import pandas as pd
 from requests import post
 import json, pickle, datetime
 from sqlalchemy import create_engine
+from time import sleep
 
 
 # Authentication
@@ -89,10 +90,21 @@ def data_preparation(df_pos_sel):
     
     return df_pos_sel
 
-# Insertion Database
-df_positions = request_positions()
-data_to_db = data_preparation(df_positions)
-engine = create_engine(
-    'sqlite:////home/python/PycharmProjects/Projects/tracker/tracker.db',
-    echo=False)
-data_to_db.to_sql('positions', con=engine, if_exists='append', index=False)
+# Routine execution
+def main():
+    # Insertion Database
+    df_positions = request_positions()
+    data_to_db = data_preparation(df_positions)
+    engine = create_engine(
+        'sqlite:////home/python/PycharmProjects/Projects/tracker/tracker.db',
+        echo=False)
+    data_to_db.to_sql('positions', con=engine, if_exists='append', index=False)
+
+while True:
+    if __name__=='__main__':
+        print(f'Starting...')
+        print(f'..., {datetime.datetime.now()}')
+        main()
+        print(f'Finished')
+        print(f'Collected from API, {datetime.datetime.now()}')
+        sleep(60*60)
